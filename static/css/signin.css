@@ -17,8 +17,8 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
   padding-right: 200px;
-  background-color: #000000d3;
-  background-image: url(pg_login.jpg); 
+  background-color: #007a6a5d;
+  background-image: url(petro4.png); 
   background-size:cover;
   background-repeat: no-repeat;
   position: relative;
@@ -33,7 +33,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-  background: rgba(48, 0, 138, 0.39);
+  background: rgba(0, 138, 69, 0.274);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.5px);

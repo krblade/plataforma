@@ -42,17 +42,14 @@ class FormConsultarLote(forms.Form):
     status =forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=STATUS_CHOICES, required=False)
     ano = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=ANO_CHOICES, required=False)
     
-    proprietario = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=PROPRIETARIO_CHOICES, required=False)
     al = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control form-control-sm', 'data-role':'tagsinput'}),label="AL:", required=False)
-    responsavel = forms.ModelMultipleChoiceField(queryset=User.objects.filter(is_active='True').order_by('first_name'), required=False, widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}))
     armazenamento = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=ARMAZEM_CHOICES, required=False)
     tipo_venda = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=VENDA_CHOICES, required=False)
     tipo_material = forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=TIPO_CHOICES, required=False)
     nm = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control form-control-sm', 'data-role':'tagsinput'}),label="NM:", required=False)
     isa_sipa = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control form-control-sm', 'data-role':'tagsinput'}),label="SIPA:", required=False)
-    
     prioridade =forms.MultipleChoiceField(widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}),choices=PRIORIDADE_CHOICES, required=False)
-    check = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class':'form-control form-control-sm'}),required=False)
+
     
    # isasipa = forms.ModelMultipleChoiceField(queryset=LOTE.objects.filter('lote_isaSipa').order_by('gere_nome'), required=False, widget=forms.SelectMultiple(attrs={'class':'form-control form-control-sm'}))
    

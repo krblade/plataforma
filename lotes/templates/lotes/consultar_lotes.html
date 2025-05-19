@@ -1,17 +1,149 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
+  
+
 <div class="container-fluid">
-
-    <h2>Login aaaa</h2>
-
-
-                   
+    
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+        For more information about DataTables, please visit the <a target="_blank"
+            href="https://datatables.net">official DataTables documentation</a>.</p>
+    
+            
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lotes</h6>
+        </div>
+        <div class="card-body">
+                <form id='busca-lotes' action="{% url 'consultar-lote' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        
+                        <div class="form-group col-md-3">
+                            <label for="Lote">Lote</label>
+                            {{form_consultar_lote.lote}}
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="Ano">Ano</label>
+                            {{form_consultar_lote.ano}}
+                        </div>
+                        
+                        <div class="form-group col-md-3">
+                            <label for="arm">Armazenamento</label>
+                            {{form_consultar_lote.armazenamento}}
+                        </div>
+                        
+                    </div> 
+                      <button type="submit" id="busca" class="btn btn-primary btn-sm">Buscar</button>               
+                </form>
+                           
+                                
+                           
+                         
+                        
+                        
+                       
+        
+    </div>
+     
+   
 
 </div>
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+        For more information about DataTables, please visit the <a target="_blank"
+            href="https://datatables.net">official DataTables documentation</a>.</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table  table-dark" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>LOTE</th>
+                            <th>TIPO VENDA</th>
+                            <th>TIPO MATERIAL/th>
+                            <th>AL</th>
+                            <th>ANO</th>
+                            <th>LOCAL ARMAZENAMENTO</th>
+                            <th>ISA SIPA</th>
+                            <th>DATA SIPA</th>
+                            <th>ISA ENVIO ARM</th>
+                            <th>DT RECEBIMENTO</th>
+                            <th>PRAZO ENTREGA</th>
+                            <th>DATA ENTREGA</th>
+                            <th>PRAZO CONCILIAÇÃO</th>
+                            <th>DATA CONCILIAÇÃO</th>
+                            
+
+                        
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>LOTE</th>
+                            <th>TIPO VENDA</th>
+                            <th>TIPO MATERIAL</th>
+                            <th>AL</th>
+                            <th>ANO</th>
+                            <th>LOCAL ARMAZENAMENTO</th>
+                            <th>ISA SIPA</th>
+                            <th>DATA SIPA</th>
+                            <th>ISA ENVIO ARM</th>
+                            <th>DT RECEBIMENTO</th>
+                            <th>PRAZO ENTREGA</th>
+                            <th>DATA ENTREGA</th>
+                            <th>PRAZO CONCILIAÇÃO</th>
+                            <th>DATA CONCILIAÇÃO</th>
+                        
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for i in lotes %}
+                        <tr>
+                            <td>{{i.Codigo}}</td>
+                            <td>{{i.TipoVenda}}</td>
+                            <td>{{i.TipoMaterial}}</td>
+                            <td>{{i.Al}}</td>
+                            <td>{{i.Ano}}</td>
+                            <td>{{i.LocalArmazenamento}}</td>
+                            <td>{{i.IsaSipa}}</td>
+                            <td>{{i.DataSipa}}</td>
+                            <td>{{i.IsaEnvioArm}}</td>
+                            <td>{{i.DataRecebimentoLote}}</td>
+                            <td>{{i.lote_prazoEntrega}}</td>
+                            <td>{{i.DataEntrega}}</td>
+                            <td>{{i.PrazoConciliação}}</td>
+                            <td>{{i.DataConciliação}}</td>
+                          
+                        </tr>
+                       {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+
+</div>
+<!-- /.container-fluid -->
+
+ 
 
 
 

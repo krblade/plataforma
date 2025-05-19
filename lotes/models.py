@@ -98,7 +98,7 @@ class Lote(models.Model):
     TipoMaterial = models.CharField(choices=MATERIAL_CHOICES, max_length=50, null=True, blank=True)
    
     IsaEnvioArm = models.CharField(max_length=50, null=True, blank=True)
-    DataEnvoArm = models.DateField(null=True, blank=True)
+    DataEnvioArm = models.DateField(null=True, blank=True)
     DataRecebimentoLote = models.DateField(null=True, blank=True)
     PrazoEntrega = models.DateField(null=True, blank=True)
     DataEntrega = models.DateField(null=True, blank=True)
@@ -121,7 +121,7 @@ class Lote(models.Model):
     EmNegociacao=models.BooleanField(default=False)
     DataPagamentoLoteEx=models.DateField(null=True, blank=True)
     WriteDownStatus =models.CharField(max_length=50, choices=WRITEDOWN_CHOICES, null=True, blank=True)
-    DtatusDeEntrega =models.CharField(max_length=50, choices=ENTREGA_CHOICES, null=True, blank=True,default='SEM ENTREGA')
+    StatusDeEntrega =models.CharField(max_length=50, choices=ENTREGA_CHOICES, null=True, blank=True,default='SEM ENTREGA')
     PrazoEntregaAdicional = models.IntegerField(default=0)
     PrazoPagamentoAdicional = models.IntegerField(default=0)
     DataCadastroUltimaNota = models.DateField(null=True, blank=True)
@@ -133,7 +133,7 @@ class Lote(models.Model):
     Notificacao = models.BooleanField(default=False)
   
     def __str__(self):
-        return f"{self.Codigo}/{self.Tipo}"   
+        return f"{self.Codigo}/{self.TipoMaterial}"   
   
    
     

@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-a%lpv2g255i9*d_^po+ya7he)q5)&cs$ae#9w112!&dg)b54bv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "lotes",
+    "dashboard",
+    "authentication"
+    
 ]
 
 MIDDLEWARE = [
@@ -126,6 +129,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-LOGIN_REDIRECT_URL = 'consultar-lote'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
